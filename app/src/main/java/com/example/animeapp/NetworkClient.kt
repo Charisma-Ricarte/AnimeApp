@@ -1,5 +1,7 @@
 package com.example.animeapp
 
+import android.os.Handler
+import android.os.Looper
 import android.util.Log
 import com.codepath.asynchttpclient.AsyncHttpClient
 import com.codepath.asynchttpclient.callback.JsonHttpResponseHandler
@@ -62,48 +64,45 @@ class NetworkClient {
 
             override fun onFailure(statusCode: Int, headers: okhttp3.Headers?, response: String?, throwable: Throwable?) {
                 Log.e("NetworkClient", "Request failed. Status code: $statusCode", throwable)
-                // Log the response body for debugging
                 Log.e("NetworkClient", "Response: $response")
             }
         })
     }
 
-    // Fetch categories (Genres) by iterating over the results
-    fun getCategoriesFromAnimeList(query: String, callback: (List<String>) -> Unit) {
-        val url = "$baseUrl/anime?q=$query"
-
+    // Fetch Genre List
+    fun getGenreList(callback: (List<Genre>) -> Unit) {
+        val url = "$baseUrl/genres/anime"
         client.get(url, object : JsonHttpResponseHandler() {
             override fun onSuccess(statusCode: Int, headers: okhttp3.Headers?, response: JSON?) {
                 try {
-                    val categories = mutableListOf<String>()
+                    val genreList = mutableListOf<Genre>()
                     val jsonObject = response?.jsonObject ?: return
                     val data = jsonObject.getJSONArray("data")
 
                     for (i in 0 until data.length()) {
-                        val animeObject = data.getJSONObject(i)
-                        val genres = animeObject.optJSONArray("genres")
-
-                        if (genres != null) {
-                            for (j in 0 until genres.length()) {
-                                val genre = genres.getJSONObject(j).getString("name")
-                                if (!categories.contains(genre)) {
-                                    categories.add(genre)  // Avoid duplicates
-                                }
-                            }
-                        }
+                        val genreObject = data.getJSONObject(i)
+                        genreList.add(
+                            Genre(
+                                id = genreObject.getInt("mal_id"),
+                                name = genreObject.getString("name")
+                            )
+                        )
                     }
 
-                    callback(categories)
+                    callback(genreList)
 
                 } catch (e: Exception) {
-                    Log.e("NetworkClient", "Error parsing categories", e)
+                    Log.e("NetworkClient", "Error parsing genre list", e)
                 }
             }
 
             override fun onFailure(statusCode: Int, headers: okhttp3.Headers?, response: String?, throwable: Throwable?) {
                 Log.e("NetworkClient", "Request failed. Status code: $statusCode", throwable)
+                if (statusCode == 429) {
+                    Log.e("NetworkClient", "Rate limit reached. Retrying after delay...")
+                    Handler(Looper.getMainLooper()).postDelayed({ getGenreList(callback) }, 2000) // Retry after 2 seconds
+                }
             }
         })
     }
 }
-

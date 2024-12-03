@@ -1,6 +1,7 @@
 package com.example.animeapp
 
 import android.os.Bundle
+import android.util.Log
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.LinearLayoutManager
@@ -17,6 +18,14 @@ class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
+
+        // Test fetching genre list
+        val networkClient = NetworkClient()
+        networkClient.getGenreList { genreList ->
+            for (genre in genreList) {
+                Log.d("GenreList", "Genre ID: ${genre.id}, Name: ${genre.name}")
+            }
+        }
 
         // Initialize views
         animeRecyclerView = findViewById(R.id.animeRecyclerView)
