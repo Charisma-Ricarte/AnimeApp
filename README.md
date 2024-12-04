@@ -92,8 +92,11 @@ The following EXTRA features are implemented:
 
 Here's a video that demos all of the app's implemented features:
 
+https://drive.google.com/file/d/1fIMc5DqDnooTshhRIpUTSRjxuxWvxpBD/view?usp=drive_link
 
-VIDEO created with **your chosen video tool**
+VIDEO created with **OBS + Discord**
+
+(The video was too big to display in github)
 
 ## Notes
 
