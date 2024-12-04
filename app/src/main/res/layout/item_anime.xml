@@ -24,6 +24,7 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="8dp"
         android:text="Anime Title"
+        android:textColor="#FF0054"
         android:textSize="16sp"
         android:textStyle="bold"
         android:ellipsize="end"
@@ -39,7 +40,10 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="4dp"
         android:text="Genres: Action, Adventure"
-        android:textSize="14sp"
+
+        android:textAppearance="@style/TextAppearance.Quote"
+
+
         android:ellipsize="end"
         android:maxLines="1"
         app:layout_constraintStart_toStartOf="@id/animeTitle"
@@ -53,7 +57,9 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="4dp"
         android:text="Rating: 8.5"
-        android:textSize="14sp"
+
+        android:textAppearance="@style/TextAppearance.Quote"
+
         app:layout_constraintStart_toStartOf="@id/animeTitle"
         app:layout_constraintTop_toBottomOf="@id/animeGenres"
         app:layout_constraintEnd_toEndOf="parent" />

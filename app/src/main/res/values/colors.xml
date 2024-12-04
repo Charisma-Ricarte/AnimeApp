@@ -2,4 +2,10 @@
 <resources>
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
+
+    <color name="DarkPurple">#2E0219</color>
+    <color name="TyrianPurple">#4A001F</color>
+    <color name="LightTyrianPurple">#6A0F49</color>
+    <color name="Folly">#FF0054</color>
+    <color name="Snow">#F6EFEE</color>
 </resources>
