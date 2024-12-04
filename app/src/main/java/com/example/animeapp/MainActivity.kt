@@ -1,7 +1,9 @@
 package com.example.animeapp
 
+import android.content.Intent
 import android.os.Bundle
 import android.util.Log
+import android.widget.Button
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.LinearLayoutManager
@@ -18,6 +20,14 @@ class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
+
+        val catalogueButton: Button = findViewById(R.id.catalogueButton)
+        catalogueButton.setOnClickListener {
+            // Start the CatalogueActivity
+            val intent = Intent(this, CatalogueActivity::class.java)
+            startActivity(intent)
+        }
+
 
         // Test fetching genre list
         val networkClient = NetworkClient()

@@ -7,6 +7,16 @@
     android:layout_height="match_parent"
     tools:context=".MainActivity">
 
+    <Button
+        android:id="@+id/catalogueButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="20dp"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:text="Catalogue" />
+
     <!-- Search Bar -->
     <androidx.appcompat.widget.SearchView
         android:id="@+id/searchView"
@@ -18,20 +28,19 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent" />
 
-    <!-- Categories RecyclerView -->
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/categoriesRecyclerView"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginTop="8dp"
-        app:layout_constraintTop_toBottomOf="@id/searchView"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
         android:orientation="horizontal"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/searchView"
         tools:itemCount="5"
         tools:listitem="@layout/item_category" />
 
-    <!-- Anime Results RecyclerView -->
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/animeRecyclerView"
         android:layout_width="0dp"
