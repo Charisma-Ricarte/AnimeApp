@@ -9,18 +9,19 @@
     tools:context=".CatalogueActivity">
 
     <!-- Button to return to search page -->
-    <Button
-        android:id="@+id/backButton"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Back to Search"
-        android:layout_gravity="center" />
 
     <!-- RecyclerView for categories -->
+    <Button
+        android:id="@+id/backButton"
+        android:layout_width="353dp"
+        android:layout_height="72dp"
+        android:layout_gravity="center"
+        android:text="Back to Search" />
+
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/categoryRecyclerView"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
+        android:layout_width="372dp"
+        android:layout_height="399dp"
         android:paddingTop="16dp" />
 
 </LinearLayout>
