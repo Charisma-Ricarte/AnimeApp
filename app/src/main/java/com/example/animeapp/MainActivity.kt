@@ -29,6 +29,8 @@ class MainActivity : AppCompatActivity() {
         }
 
 
+        
+
         // Test fetching genre list
         val networkClient = NetworkClient()
         networkClient.getGenreList { genreList ->
