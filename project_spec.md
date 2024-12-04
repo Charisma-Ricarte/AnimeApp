@@ -31,7 +31,7 @@ Required Features:
 
 - **User searches for an anime by title.**
 => Display search results with key details (title, genres, rating).
-- **User selects an anime from the list.**
+- **User views an anime from the list.**
 => Display anime details (synopsis, episode list, trailers).
 - **User explores anime by category (e.g., Shonen).**
 => Display anime within the selected category, sorted by popularity.
@@ -84,6 +84,13 @@ Here's a place for any other notes on the app, it's creation
 process, or what you learned this unit!  
 
 For Milestone 2, include **2+ Videos/GIFs** of the build process here!
+
+![Screen_recording_20241203_203257-ezgif com-video-to-gif-converter](https://github.com/user-attachments/assets/d67952b8-211e-40d8-9de7-a727fe210a0d)
+
+
+![Screen_recording_20241203_203514-ezgif com-video-to-gif-converter](https://github.com/user-attachments/assets/48b38136-e458-435e-8161-fd68025d69ba)
+
+
 
 ## License
 
