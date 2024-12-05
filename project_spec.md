@@ -29,11 +29,11 @@ AnimeApp is a cataloging application tailored for anime enthusiasts. It provides
 
 Required Features:
 
-- **User searches for an anime by title.**
+[x] **User searches for an anime by title.**
 => Display search results with key details (title, genres, rating).
-- **User views an anime from the list.**
+[x] **User views an anime from the list.**
 => Display anime details (synopsis, episode list, trailers).
-- **User explores anime by category (e.g., Shonen).**
+[x] **User explores anime by category (e.g., Shonen).**
 => Display anime within the selected category, sorted by popularity.
 
 Stretch Features:
@@ -58,7 +58,7 @@ Required Feature
 - User searches for an anime by title.
     => Display search results with key details (title, genres, rating).
 - User selects an anime from the list.
-    => Display anime details (synopsis, episode list,         trailers).
+    => Display anime details (synopsis, episode list,trailers).
 - User explores anime by category (e.g., Shonen).
     => Display anime within the selected category, sorted     by popularity.
 
