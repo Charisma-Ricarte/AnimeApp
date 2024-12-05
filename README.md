@@ -79,7 +79,11 @@ The following REQUIRED files are included:
   - [X] App Overview (Milestone 1)
   - [X] App Spec (Milestone 1)
   - [x] Checked off 2+ completed features
+    - [x] User searches for an anime by title.
+    - [x] User views an anime from the list.
+    - [x] User explores anime by category (e.g., Shonen).
   - [x] 2+ Videos/GIFs of build progress
+  
 
 - [x] Our 🎥 Demo Video
   - [x] We have also added the Demo Video Link to the Group Info Form on the course portal.
